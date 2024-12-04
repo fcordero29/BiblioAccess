@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<h2>Biblioteca - Lista de Libros</h2>
+
+<div class="filter-container card mb-4">
+  <div class="card-body">
+    <form method="GET" action="/" class="form-inline">
+      <div class="form-group mr-3">
+        <input type="text" name="titulo" class="form-control" placeholder="Buscar por título">
+        <button type="submit" class="btn btn-primary ml-2">Buscar</button>
+      </div>
+
+      <div class="form-group dropdown ml-4">
+        <button class="btn btn-info dropdown-toggle" type="button" id="categoriesDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Seleccionar Categorías
+        </button>
+        <div class="dropdown-menu p-3" aria-labelledby="categoriesDropdown">
+          <label><strong>Categorías:</strong></label>
+          <div class="category-checkboxes">
+            {{#each categorias}}
+              <div class="form-check">
+                <input class="form-check-input custom-checkbox" type="checkbox" name="categorias" value="{{this.id}}" id="categoria{{this.id}}">
+                <label class="form-check-label category-label" for="categoria{{this.id}}">{{this.nombre}}</label>
+              </div>
+            {{/each}}
+          </div>
+        </div>
+        <button type="submit" class="btn btn-secondary ml-2">Filtrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  {{#each libros}}
+  <div class="col-md-4 mb-4">
+    <div class="card book-card">
+      <img src="{{this.portada}}" class="card-img-top book-image" alt="Portada del Libro">
+      <div class="card-body">
+        <h5 class="card-title">{{this.titulo}}</h5>
+        <p class="card-text"><strong>Año:</strong> {{this.anoPublicacion}}</p>
+        <p class="card-text"><strong>Categoría:</strong> {{this.categoria.nombre}}</p>
+        <p class="card-text"><strong>Autor:</strong> {{this.autor.nombre}}</p>
+        <p class="card-text"><strong>Editorial:</strong> {{this.editorial.nombre}}</p>
+       <a href="/libros/detalle/{{this.id}}" class="btn btn-info">Ver Detalles</a>
+      </div>
+    </div>
+  </div>
+  {{/each}}
+</div>

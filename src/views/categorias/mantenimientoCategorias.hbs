@@ -1,0 +1,32 @@
+<h2>Listado de Categorías</h2>
+<a href="/categorias/nueva" class="btn btn-primary mb-3">Crear Nueva Categoría</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Cantidad de Libros</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if categorias.length}}
+      {{#each categorias}}
+      <tr>
+        <td>{{#if this.nombre}}{{this.nombre}}{{else}}Sin nombre{{/if}}</td>
+        <td>{{#if this.descripcion}}{{this.descripcion}}{{else}}Sin descripción{{/if}}</td>
+        <td>{{#if this.cantidadLibros}}{{this.cantidadLibros}}{{else}}0{{/if}}</td>
+        <td>
+          <a href="/categorias/editar/{{this.id}}" class="btn btn-warning btn-sm">Editar</a>
+          <a href="/categorias/eliminar/{{this.id}}" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de que deseas eliminar esta categoría?')">Eliminar</a>
+        </td>
+      </tr>
+      {{/each}}
+    {{else}}
+      <tr>
+        <td colspan="4" class="text-center">No hay categorías disponibles</td>
+      </tr>
+    {{/if}}
+  </tbody>
+</table>

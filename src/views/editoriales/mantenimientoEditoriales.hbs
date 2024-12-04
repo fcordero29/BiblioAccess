@@ -1,0 +1,34 @@
+<h2>Mantenimiento de Editoriales</h2>
+<a href="/editoriales/nueva" class="btn btn-primary mb-3">Crear Nueva Editorial</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Teléfono</th>
+      <th>País</th>
+      <th>Cantidad de Libros</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#if editoriales.length}}
+      {{#each editoriales}}
+      <tr>
+        <td>{{this.nombre}}</td>
+        <td>{{this.telefono}}</td>
+        <td>{{this.pais}}</td>
+        <td>{{this.cantidadLibros}}</td>
+        <td>
+          <a href="/editoriales/editar/{{this.id}}" class="btn btn-warning btn-sm">Editar</a>
+          <a href="/editoriales/eliminar/{{this.id}}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+      </tr>
+      {{/each}}
+    {{else}}
+      <tr>
+        <td colspan="5" class="text-center">No hay editoriales disponibles</td>
+      </tr>
+    {{/if}}
+  </tbody>
+</table>

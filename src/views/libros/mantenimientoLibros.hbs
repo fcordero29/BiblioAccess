@@ -1,0 +1,32 @@
+<h2>Listado de Libros</h2>
+<a href="/libros/nuevo" class="btn btn-primary mb-3">Crear Nuevo Libro</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Portada</th>
+      <th>Año de Publicación</th>
+      <th>Categoría</th>
+      <th>Autor</th>
+      <th>Editorial</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each libros}}
+    <tr>
+      <td>{{this.titulo}}</td>
+      <td><img src="{{this.portada}}" alt="Portada" width="50"></td>
+      <td>{{this.anoPublicacion}}</td>
+      <td>{{this.categoria.nombre}}</td>
+      <td>{{this.autor.nombre}}</td>
+      <td>{{this.editorial.nombre}}</td>
+      <td>
+        <a href="/libros/editar/{{this.id}}" class="btn btn-warning">Editar</a>
+        <a href="/libros/eliminar/{{this.id}}" class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

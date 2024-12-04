@@ -1,0 +1,7 @@
+<h3>¿Está seguro que desea eliminar este autor?</h3>
+<p>Nombre: {{autor.nombre}}</p>
+<p>Correo: {{autor.correo}}</p>
+<form action="/autores/eliminar/{{autor.id}}" method="POST">
+  <button type="submit" class="btn btn-danger">Aceptar</button>
+  <a href="/autores" class="btn btn-secondary">Cancelar</a>
+</form>

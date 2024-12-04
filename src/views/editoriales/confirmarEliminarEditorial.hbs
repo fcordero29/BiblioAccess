@@ -1,0 +1,8 @@
+<h2>Confirmar Eliminación de Editorial</h2>
+
+<p>¿Está seguro que desea eliminar esta editorial: <strong>{{editorial.nombre}}</strong>?</p>
+
+<form action="/editoriales/eliminar/{{editorial.id}}" method="POST">
+  <button type="submit" class="btn btn-danger">Aceptar</button>
+  <a href="/editoriales" class="btn btn-secondary">Cancelar</a>
+</form>

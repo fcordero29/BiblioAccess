@@ -1,0 +1,26 @@
+<h2>Listado de Autores</h2>
+<a href="/autores/nuevo" class="btn btn-primary mb-3">Crear Nuevo Autor</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Correo</th>
+      <th>Cantidad de Libros</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each autores}}
+    <tr>
+      <td>{{this.nombre}}</td>
+      <td>{{this.correo}}</td>
+      <td>{{this.cantidadLibros}}</td>
+      <td>
+        <a href="/autores/editar/{{this.id}}" class="btn btn-warning">Editar</a>
+        <a href="/autores/eliminar/{{this.id}}" class="btn btn-danger">Eliminar</a>
+      </td>
+    </tr>
+    {{/each}}
+  </tbody>
+</table>

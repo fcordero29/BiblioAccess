@@ -1,0 +1,24 @@
+<h2>Detalles del Libro</h2>
+
+<div class="card mb-3" style="max-width: 600px; margin: 0 auto;">
+  <div class="row no-gutters">
+    <!-- Imagen de la portada -->
+    <div class="col-md-4">
+      <img src="{{libro.portada}}" class="card-img" alt="Portada del libro" style="max-width: 100%; height: auto;">
+    </div>
+    <!-- Información del libro -->
+    <div class="col-md-8">
+      <div class="card-body">
+        <h3 class="card-title">{{libro.titulo}}</h3>
+        <p class="card-text"><strong>Año de Publicación:</strong> {{libro.anoPublicacion}}</p>
+        <p class="card-text"><strong>Descripción:</strong> {{libro.descripcion}}</p>
+        <p class="card-text"><strong>Categoría:</strong> {{libro.categoria.nombre}}</p>
+        <p class="card-text"><strong>Autor:</strong> {{libro.autor.nombre}}</p>
+        <p class="card-text"><strong>Editorial:</strong> {{libro.editorial.nombre}}</p>
+        <p class="card-text"><strong>País de la Editorial:</strong> {{libro.editorial.pais}}</p>
+        <p class="card-text"><strong>Teléfono de la Editorial:</strong> {{libro.editorial.telefono}}</p>
+        <a href="/libros" class="btn btn-secondary mt-3">Volver al listado</a>
+      </div>
+    </div>
+  </div>
+</div>

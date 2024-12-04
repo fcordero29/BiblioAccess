@@ -1,0 +1,7 @@
+<h3>¿Está seguro que desea eliminar esta categoría?</h3>
+<p>Nombre: {{categoria.nombre}}</p>
+<p>Descripción: {{categoria.descripcion}}</p>
+<form action="/categorias/eliminar/{{categoria.id}}" method="POST">
+  <button type="submit" class="btn btn-danger">Aceptar</button>
+  <a href="/categorias" class="btn btn-secondary">Cancelar</a>
+</form>
